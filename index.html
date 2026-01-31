@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Usman Rasuli - High School Student | Louisville, KY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Light/Dark Mode */
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #4cc9f0;
+            --text-color: #333333;
+            --bg-color: #ffffff;
+            --card-bg: #f8f9fa;
+            --section-bg: #f5f7ff;
+            --border-color: #eaeaea;
+            --shadow: rgba(67, 97, 238, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary-color: #5d7af0;
+            --secondary-color: #6bd4f8;
+            --text-color: #f0f0f0;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --section-bg: #1a1a2e;
+            --border-color: #333344;
+            --shadow: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(67, 97, 238, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .highlight {
+            color: var(--primary-color);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--bg-color);
+            box-shadow: 0 2px 10px var(--shadow);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-left: 15px;
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            background-color: var(--section-bg);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .contact-info-hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-icon {
+            color: var(--primary-color);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px var(--shadow);
+            animation: fadeIn 1s ease 0.5s both;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Profile Section */
+        .profile {
+            background-color: var(--bg-color);
+        }
+
+        .profile-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .profile-text {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .profile-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            background-color: rgba(67, 97, 238, 0.05);
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+        }
+
+        /* Education & Experience */
+        .edu-exp {
+            background-color: var(--section-bg);
+        }
+
+        .edu-exp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .education-card, .experience-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: var(--transition);
+        }
+
+        .education-card:hover, .experience-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .edu-icon, .exp-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .edu-details, .exp-details {
+            margin-top: 15px;
+        }
+
+        .edu-details h4, .exp-details h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .edu-date, .exp-date {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .responsibilities {
+            margin-top: 15px;
+        }
+
+        .responsibilities li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .responsibilities li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Skills Section */
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skills-category {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background-color: rgba(67, 97, 238, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Languages Section */
+        .languages {
+            background-color: var(--section-bg);
+        }
+
+        .languages-content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .language-item {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            transition: var(--transition);
+        }
+
+        .language-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .language-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .language-level {
+            display: inline-block;
+            padding: 5px 12px;
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Availability Section */
+        .availability-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .availability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .availability-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: var(--transition);
+        }
+
+        .availability-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .availability-icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .availability-card h4 {
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--section-bg);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item-detailed {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon-detailed {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background-color: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--card-bg);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copyright {
+            opacity: 0.8;
+        }
+
+        .back-to-top {
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .edu-exp-grid, .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px var(--shadow);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .contact-info-hero {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">MUR.</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#availability">Availability</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Muhammad Usman <span class="highlight">Rasuli</span></h1>
+                    <p class="hero-subtitle">Reliable & Diligent High School Student</p>
+                    
+                    <div class="contact-info-hero">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span>Louisville, KY, USA</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <span>502-389-0653</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <span>Usmanrasuli65@gmail.com</span>
+                        </div>
+                    </div>
+                    
+                    <p>Seeking a part-time position where I can apply my strong work ethic, quick learning ability, and dedication to helping others.</p>
+                    
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn">Contact Me</a>
+                        <a href="#availability" class="btn btn-outline">Check Availability</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile" id="profile">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Profile</h2>
+            </div>
+            <div class="profile-content">
+                <div class="profile-text">
+                    <h3>Reliable & Disciplined Student</h3>
+                    <p>I am a dedicated high school student known for my reliability, strong work ethic, and ability to learn quickly. I enjoy helping others and can follow instructions accurately to complete tasks efficiently.</p>
+                    <p>I'm comfortable working with people from diverse backgrounds and take pride in my ability to communicate clearly and patiently, whether helping classmates with schoolwork or working in a team environment.</p>
+                    <p>My goal is to contribute positively to a workplace while developing professional skills and gaining valuable experience.</p>
+                    
+                    <div class="profile-quote">
+                        "I believe that hard work, consistency, and a willingness to learn are the keys to success in any endeavor."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Section -->
+    <section class="edu-exp" id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education & Experience</h2>
+            </div>
+            
+            <div class="edu-exp-grid">
+                <div class="education-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <div class="edu-details">
+                        <h4>Newcomer Academy</h4>
+                        <p class="edu-date">Louisville, KY | Expected Graduation: 2028</p>
+                        <p>Currently entering 11th grade with a focus on academic excellence and developing practical skills for future employment.</p>
+                        <p>Maintaining strong attendance record and active participation in school activities.</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="exp-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Volunteer Experience</h3>
+                    <div class="exp-details">
+                        <h4>Student Support Volunteer</h4>
+                        <p class="exp-date">Louisville, KY | 2023 – Present</p>
+                        <p>Volunteering to assist fellow students with their academic work, particularly those with limited English proficiency.</p>
+                        
+                        <ul class="responsibilities">
+                            <li>Assisted students with limited English in understanding class material</li>
+                            <li>Helped classmates complete homework and school assignments</li>
+                            <li>Communicated concepts clearly and patiently</li>
+                            <li>Demonstrated responsibility and consistency in daily school activities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+            </div>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3>Core Strengths</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Fast Learner</span>
+                        <span class="skill-tag">Reliable & Punctual</span>
+                        <span class="skill-tag">Clear Communication</span>
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Following Instructions</span>
+                        <span class="skill-tag">Helping Others</span>
+                        <span class="skill-tag">Dependable</span>
+                        <span class="skill-tag">Consistent</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Basic Computer Skills</span>
+                        <span class="skill-tag">Email Communication</span>
+                        <span class="skill-tag">Document Creation</span>
+                        <span class="skill-tag">Online Tools</span>
+                        <span class="skill-tag">Internet Research</span>
+                        <span class="skill-tag">Social Media</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="languages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Languages</h2>
+            </div>
+            <div class="languages-content">
+                <div class="language-item">
+                    <div class="language-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>English</h3>
+                    <p>Intermediate proficiency</p>
+                    <span class="language-level">Conversational & Written</span>
+                </div>
+                
+                <div class="language-item">
+                    <div class="language-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3>Turkmen</h3>
+                    <p>Native fluency</p>
+                    <span class="language-level">Fluent Speaker</span>
+                </div>
+                
+                <div class="language-item">
+                    <div class="language-icon">
+                        <i class="fas fa-globe-europe"></i>
+                    </div>
+                    <h3>Turkish</h3>
+                    <p>Proficient level</p>
+                    <span class="language-level">Highly Proficient</span>
+                </div>
+                
+                <div class="language-item">
+                    <div class="language-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Dari / Persian</h3>
+                    <p>Proficient level</p>
+                    <span class="language-level">Highly Proficient</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Availability Section -->
+    <section id="availability">
+        <div class="container">
+            <div class="section-title">
+                <h2>Availability</h2>
+            </div>
+            <div class="availability-content">
+                <p>As a dedicated student, I'm looking for part-time work that accommodates my school schedule while allowing me to contribute meaningfully to your team.</p>
+                
+                <div class="availability-grid">
+                    <div class="availability-card">
+                        <div class="availability-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h4>Summer</h4>
+                        <p>Available full-time during summer break</p>
+                    </div>
+                    
+                    <div class="availability-card">
+                        <div class="availability-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h4>School Year</h4>
+                        <p>Available after school on weekdays</p>
+                    </div>
+                    
+                    <div class="availability-card">
+                        <div class="availability-icon">
+                            <i class="fas fa-calendar-weekend"></i>
+                        </div>
+                        <h4>Weekends</h4>
+                        <p>Weekend availability if required</p>
+                    </div>
+                    
+                    <div class="availability-card">
+                        <div class="availability-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Flexible</h4>
+                        <p>Willing to work with your scheduling needs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect!</h3>
+                    <p>I'm excited about the possibility of working with you! Please feel free to reach out if you have a position that matches my skills and availability.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item-detailed">
+                            <div class="contact-icon-detailed">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>502-389-0653</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item-detailed">
+                            <div class="contact-icon-detailed">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>Usmanrasuli65@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item-detailed">
+                            <div class="contact-icon-detailed">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Louisville, KY, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <!-- Add your social media links here -->
+                        <a href="mailto:Usmanrasuli65@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:5023890653" class="social-link">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2023 Muhammad Usman Rasuli. All rights reserved.</p>
+                </div>
+                <a href="#home" class="back-to-top">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const contactForm = document.getElementById('contactForm');
+        const backToTopBtn = document.querySelector('.back-to-top');
+
+        // Theme Toggle
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Contact Form Submission
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.opacity = '1';
+                backToTopBtn.style.visibility = 'visible';
+            } else {
+                backToTopBtn.style.opacity = '0';
+                backToTopBtn.style.visibility = 'hidden';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation to elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.education-card, .experience-card, .skills-category, .language-item, .availability-card').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
